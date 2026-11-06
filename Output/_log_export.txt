@@ -1,0 +1,113 @@
+﻿# 答案汇总
+
+## 数据标度的核实
+
+题目要求核实 1.csv 的 log 底数与正负值的含义，结论如下，完整证据在 问题1_标度核实.md。
+
+- 底数为 **log10**：16 个已知物理量的反变换平均命中率 0.9585，base e 只有 0.8553；
+  决定性证据是 pH，ln 反变换给出 1.85，低于啤酒 pH 的物理下限 2.8。
+- **负值是正常取值**：z 的正负只表示原始浓度相对 1 的大小，z=-1 即 0.1，不是缺失或异常编码。
+- **标度并不统一**：56 个全程非负的列给的是原始浓度而非 log10，其中 11 列最大值上万、
+  15 列集中在 4 到 9 之间。对树模型无影响（单调变换不改变分裂点），但计算 OAV 时必须按列区分。
+
+
+## 问题一 感官评分
+
+样本 250 条，评分维度 50 个，取值 0 到 6 的整数。
+全部 12500 个评分的分布：0 级 4833 个，1 级 5639 个，2 级 1925 个，3 级 101 个，4 级 2 个。
+
+对应指标：宏 R2 0.2498（门槛 0.27）、分级 MAE 0.3614（门槛 0.35），两项都未达标，
+原因与逐维明细见 问题1_说明.md，这里不再粉饰。
+
+## 问题二 Top-3 关键因素化合物
+
+50 个感官维度各给出 3 个关键因素，共 150 条记录，全部为化合物。
+排序用三条证据合成：单变量 Spearman 相关 0.40、共表达图扩散后的置换重要性 0.45、
+bootstrap 入选频率 0.15。表里的 rho、perm、perm_graph、boot_freq 就是这三条的原始值。
+
+| 感官维度 | 第 1 | 第 2 | 第 3 |
+| --- | --- | --- | --- |
+| A_malt_all | methylpyrazine | beta.phellandrene | acetaldehyde |
+| A_malt_grain | terpinen.4.ol | beta.phellandrene | isoborneol |
+| A_malt_bread | neryl.formate | car.3.en.2.one | X4.ethyl.phenol |
+| A_malt_cara | acetaldehyde | X2.ethyl.1.hexanol | phenethyl_acetate |
+| A_malt_burn | X2.acetylpyrrole | methylpyrazine | MeSH |
+| A_hops_all | ethyl_octanoate | ethyl_decanoate | X.E..2.nonenal |
+| A_hops_citrus | humulene.epoxide.II | linalool | X1.2.dihydro.8.hydroxy..2E..linalool |
+| A_hops_tropical | DMS | methyl.geranate | X3.furanmethanol |
+| A_hops_noble | ethyl_octanoate | ethyl_decanoate | isopentyl.hexanoate |
+| A_hops_woody | neryl.propanoate | X.E..ortho.methoxy.cinnamaldehyde | alloaromadendrene.epoxide |
+| A_esters_all | acetaldehyde | n.hexanol | ethyl_acetate |
+| A_esters_ethac | ethyl_acetate | ethyl.hexadecanoate | isopentyl.hexanoate |
+| A_esters_isoaa | n.hexanol | isopentyl_acetate | isoamyl_alcohol |
+| A_esters_flower | beta.phellandrene | X.E..dihydro.apofarnesal | ethyl.benzoate |
+| A_esters_fruity | beta.phellandrene | germacrene.D | X1.10.di.epi.cubenol |
+| F_malt_all | acetaldehyde | X4.ethyl.phenol | X.E..alpha.ionone |
+| F_malt_grain | terpinen.4.ol | X.E..beta.ionone | selin.11.en.4.alpha.ol |
+| F_malt_bread | acetaldehyde | isopentyl_acetate | ethyl.tiglate |
+| F_malt_cara | acetaldehyde | X2.acetylpyrrole | isopentyl_acetate |
+| F_malt_burn | MeSH | ethyl_decanoate | isobutanol |
+| F_hops_all | ethyl_octanoate | methyl.geranate | ethyl_decanoate |
+| F_hops_citrus | ethyl.furoate | citronellol | geraniol |
+| F_hops_tropical | DMS | hexyl.acetate | terpinolene |
+| F_hops_noble | ethyl_octanoate | ethyl_decanoate | isobutanol |
+| F_hops_woody | isobutanol | tau.muurolol | caryophyllene.oxide |
+| F_esters_all | acetaldehyde | ethyl_acetate | n.hexanol |
+| F_esters_ethac | ethyl_acetate | acetaldehyde | isoamyl_alcohol |
+| F_esters_isoaa | n.hexanol | isopentyl_acetate | isobutyl_acetate |
+| F_esters_flower | beta.phellandrene | isopentyl.butanoate | X.E..dihydro.apofarnesal |
+| F_esters_fruity | DES | beta.phellandrene | caryophyllene.oxide |
+| acidity | ethyl.phenylacetate | prenyl.isobutyrate | perillyl.acetate |
+| bitternes | ethyl_octanoate | ethyl_decanoate | MeSH |
+| sweetness | ethyl_decanoate | isopentyl.hexanoate | neryl.propanoate |
+| X4vg | delta.terpinyl.acetate | neryl.formate | prenyl.isobutyrate |
+| diacetyl | ethyl_decanoate | alpha.calacorene | eugenol |
+| dms | X2.acetylfuran | amyl.acetate | X.Z..dihydro.apofarnesal |
+| metallic | ethyl_isovalerate | alpha.calacorene | isopentyl.butanoate |
+| stale_hops | X2.undecanol | alloaromadendrene.epoxide | X.E..ortho.methoxy.cinnamaldehyde |
+| t2n | beta.phellandrene | terpinen.4.ol | phenethyl_alcohol |
+| orange | camphor | beta.phellandrene | terpinen.4.ol |
+| coriander | ethyl..E..linalool | camphor | terpinen.4.ol |
+| clove | camphor | beta.phellandrene | isopentyl_acetate |
+| lactic | prenyl.isobutyrate | perillyl.acetate | butyl.acetate |
+| acetic | prenyl.isobutyrate | ethyl_isovalerate | ethyl.phenylacetate |
+| barnyard | X2.undecanol | neryl.formate | alloaromadendrene.epoxide |
+| alcohol | ethyl_octanoate | ethyl_hexanoate | acetaldehyde |
+| aftertaste | ethyl_octanoate | ethyl_decanoate | X.E..2.nonenal |
+| body | ethyl_hexanoate | ethyl_octanoate | X3.methyl.2.hexanol |
+| co2 | ethyl_octanoate | ethyl_hexanoate | ethyl_decanoate |
+| overall | ethyl_acetate | X2.butyloctanoate | pentyl.octanoate |
+
+
+## 问题三 风格条件生成与跨风格迁移
+
+生成化合物谱：22 个风格，每风格 100 条，共 2200 条，每条 210 个化合物列（log10 浓度）。
+生成感官画像：2200 条，每条 50 个感官维度的 0-6 分制得分。
+
+迁移：Pils/Lager 的真实样本保留个体潜编码，只换风格均值后重建，得到 Tripel 的化合物谱。
+
+
+## 文件清单
+
+- 图_共表达网络.png
+- 图_消融矩阵.png
+- 图_生成模型.png
+- 图_跨风格迁移.png
+- 图_问题一散点.png
+- 图_问题一精度.png
+- 答案总览.md
+- 问题1_感官评分_分级0到6.csv
+- 问题1_感官评分_连续分.csv
+- 问题1_标度核实.md
+- 问题1_说明.md
+- 问题2_关键因素化合物.csv
+- 问题2_关键因素化合物_含理化指标.csv
+- 问题2_说明.md
+- 问题3_生成化合物谱.csv
+- 问题3_生成感官画像.csv
+- 问题3_说明.md
+- 问题3_跨风格迁移化合物谱.csv
+- 问题3_迁移前感官画像.csv
+- 问题3_迁移后感官画像.csv
+
+答案目录已整理完毕

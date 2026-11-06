@@ -1,0 +1,10 @@
+{
+  "n_cols": 231,
+  "n_nonneg": 56,
+  "hit_log10": 0.9584999999999999,
+  "hit_ln": 0.8552500000000001,
+  "nonneg_raw_heavy": 11,
+  "n_threshold_pair": 40,
+  "n_log_plausible": 40,
+  "n_raw_plausible": 22
+}

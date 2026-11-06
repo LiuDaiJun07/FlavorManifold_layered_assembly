@@ -1,0 +1,247 @@
+{
+ "rows": [
+  {
+   "family": "A_malt",
+   "parent": "A_malt_all",
+   "child": "A_malt_grain",
+   "r2_before": 0.04261377105374742,
+   "r2_after": 0.051092174079491515,
+   "delta": 0.008478403025744097,
+   "lam_mean": 0.48,
+   "is_weak": true
+  },
+  {
+   "family": "A_malt",
+   "parent": "A_malt_all",
+   "child": "A_malt_bread",
+   "r2_before": 0.10890814271949778,
+   "r2_after": 0.12211399427664915,
+   "delta": 0.013205851557151371,
+   "lam_mean": 0.5,
+   "is_weak": false
+  },
+  {
+   "family": "A_malt",
+   "parent": "A_malt_all",
+   "child": "A_malt_cara",
+   "r2_before": 0.3584093128521606,
+   "r2_after": 0.3694666963034291,
+   "delta": 0.011057383451268499,
+   "lam_mean": 0.5,
+   "is_weak": false
+  },
+  {
+   "family": "A_malt",
+   "parent": "A_malt_all",
+   "child": "A_malt_burn",
+   "r2_before": 0.28786208722852136,
+   "r2_after": 0.267282942285745,
+   "delta": -0.02057914494277635,
+   "lam_mean": 0.23000000000000004,
+   "is_weak": false
+  },
+  {
+   "family": "A_hops",
+   "parent": "A_hops_all",
+   "child": "A_hops_citrus",
+   "r2_before": 0.1284075670161191,
+   "r2_after": 0.13698145171816944,
+   "delta": 0.008573884702050338,
+   "lam_mean": 0.5,
+   "is_weak": false
+  },
+  {
+   "family": "A_hops",
+   "parent": "A_hops_all",
+   "child": "A_hops_tropical",
+   "r2_before": 0.10235305272242701,
+   "r2_after": 0.0979823617037181,
+   "delta": -0.004370691018708905,
+   "lam_mean": 0.45,
+   "is_weak": false
+  },
+  {
+   "family": "A_hops",
+   "parent": "A_hops_all",
+   "child": "A_hops_noble",
+   "r2_before": 0.3254283461720323,
+   "r2_after": 0.31722077722922537,
+   "delta": -0.008207568942806942,
+   "lam_mean": 0.4,
+   "is_weak": false
+  },
+  {
+   "family": "A_hops",
+   "parent": "A_hops_all",
+   "child": "A_hops_woody",
+   "r2_before": 0.10201232577882702,
+   "r2_after": 0.0977980123697686,
+   "delta": -0.004214313409058423,
+   "lam_mean": 0.13,
+   "is_weak": false
+  },
+  {
+   "family": "A_esters",
+   "parent": "A_esters_all",
+   "child": "A_esters_ethac",
+   "r2_before": 0.15874291563502096,
+   "r2_after": 0.1533821523015152,
+   "delta": -0.005360763333505769,
+   "lam_mean": 0.05,
+   "is_weak": false
+  },
+  {
+   "family": "A_esters",
+   "parent": "A_esters_all",
+   "child": "A_esters_isoaa",
+   "r2_before": 0.09762227580579375,
+   "r2_after": 0.09047191581845893,
+   "delta": -0.00715035998733482,
+   "lam_mean": 0.25,
+   "is_weak": false
+  },
+  {
+   "family": "A_esters",
+   "parent": "A_esters_all",
+   "child": "A_esters_flower",
+   "r2_before": 0.03670882098244366,
+   "r2_after": 0.0667282582855554,
+   "delta": 0.03001943730311174,
+   "lam_mean": 0.5,
+   "is_weak": true
+  },
+  {
+   "family": "A_esters",
+   "parent": "A_esters_all",
+   "child": "A_esters_fruity",
+   "r2_before": 0.03204051408112185,
+   "r2_after": 0.03657727912774744,
+   "delta": 0.0045367650466255904,
+   "lam_mean": 0.45999999999999996,
+   "is_weak": true
+  },
+  {
+   "family": "F_malt",
+   "parent": "F_malt_all",
+   "child": "F_malt_grain",
+   "r2_before": 0.08798399659821743,
+   "r2_after": 0.08798399659821743,
+   "delta": 0.0,
+   "lam_mean": 0.0,
+   "is_weak": true
+  },
+  {
+   "family": "F_malt",
+   "parent": "F_malt_all",
+   "child": "F_malt_bread",
+   "r2_before": 0.2235793160319477,
+   "r2_after": 0.23002583485637906,
+   "delta": 0.006446518824431369,
+   "lam_mean": 0.48,
+   "is_weak": false
+  },
+  {
+   "family": "F_malt",
+   "parent": "F_malt_all",
+   "child": "F_malt_cara",
+   "r2_before": 0.33945965085929597,
+   "r2_after": 0.3458094464428382,
+   "delta": 0.006349795583542206,
+   "lam_mean": 0.41999999999999993,
+   "is_weak": false
+  },
+  {
+   "family": "F_malt",
+   "parent": "F_malt_all",
+   "child": "F_malt_burn",
+   "r2_before": 0.4020510740893841,
+   "r2_after": 0.39638891697301093,
+   "delta": -0.00566215711637319,
+   "lam_mean": 0.16,
+   "is_weak": false
+  },
+  {
+   "family": "F_hops",
+   "parent": "F_hops_all",
+   "child": "F_hops_citrus",
+   "r2_before": 0.18366241972487907,
+   "r2_after": 0.18083102760348424,
+   "delta": -0.0028313921213948268,
+   "lam_mean": 0.15,
+   "is_weak": false
+  },
+  {
+   "family": "F_hops",
+   "parent": "F_hops_all",
+   "child": "F_hops_tropical",
+   "r2_before": 0.1297096737702289,
+   "r2_after": 0.10513452172868831,
+   "delta": -0.024575152041540593,
+   "lam_mean": 0.13999999999999999,
+   "is_weak": false
+  },
+  {
+   "family": "F_hops",
+   "parent": "F_hops_all",
+   "child": "F_hops_noble",
+   "r2_before": 0.3888318279683597,
+   "r2_after": 0.39309444626014267,
+   "delta": 0.0042626182917829825,
+   "lam_mean": 0.45,
+   "is_weak": false
+  },
+  {
+   "family": "F_hops",
+   "parent": "F_hops_all",
+   "child": "F_hops_woody",
+   "r2_before": 0.18883075109168856,
+   "r2_after": 0.2099843725634709,
+   "delta": 0.021153621471782347,
+   "lam_mean": 0.5,
+   "is_weak": false
+  },
+  {
+   "family": "F_esters",
+   "parent": "F_esters_all",
+   "child": "F_esters_ethac",
+   "r2_before": 0.22374502858140777,
+   "r2_after": 0.2230269913191555,
+   "delta": -0.0007180372622522802,
+   "lam_mean": 0.01,
+   "is_weak": false
+  },
+  {
+   "family": "F_esters",
+   "parent": "F_esters_all",
+   "child": "F_esters_isoaa",
+   "r2_before": 0.1596983848292175,
+   "r2_after": 0.15369011245940012,
+   "delta": -0.00600827236981738,
+   "lam_mean": 0.12000000000000002,
+   "is_weak": false
+  },
+  {
+   "family": "F_esters",
+   "parent": "F_esters_all",
+   "child": "F_esters_flower",
+   "r2_before": 0.01797141782447287,
+   "r2_after": 0.025931599732209265,
+   "delta": 0.007960181907736397,
+   "lam_mean": 0.5,
+   "is_weak": true
+  },
+  {
+   "family": "F_esters",
+   "parent": "F_esters_all",
+   "child": "F_esters_fruity",
+   "r2_before": 0.14093545362974946,
+   "r2_after": 0.13842110425215792,
+   "delta": -0.0025143493775915404,
+   "lam_mean": 0.030000000000000006,
+   "is_weak": false
+  }
+ ],
+ "macro_before": 0.24801495562367318,
+ "macro_after": 0.25045584484697775,
+ "applied": 11
+}

@@ -1,0 +1,21 @@
+{
+  "authority": "sel",
+  "macro": 0.26204083600382955,
+  "weak": 0.07665854190251697,
+  "strong": 0.6691313636583154,
+  "base": [
+    0.26204083600382955,
+    0.07665854190251697,
+    0.6691313636583154
+  ],
+  "g3_gap": 0.005001929071201727,
+  "oversel": false,
+  "gates": {
+    "macro": false,
+    "weak": true,
+    "strong": true
+  },
+  "dims_on": [],
+  "grade_match": 0.80592,
+  "grade_match_exp": 0.804
+}

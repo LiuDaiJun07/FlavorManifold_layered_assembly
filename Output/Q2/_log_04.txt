@@ -1,0 +1,164 @@
+﻿# Q2 步骤四：最终版 Top-3 关键因素化合物
+
+候选因素 240 个（化合物与理化列 231 个，缺失指示 9 个），目标 50 个感官维度。
+候选集不再做近常数列裁剪：像 X4VG 这种绝大多数样本都在检出限以下的化合物，
+它对 4vg 维度恰好是定义级的关键因素，剔除它会让结论失去意义。
+
+## 1 单变量相关
+
+|rho| 的中位数 0.087，最大 0.817。
+
+## 2 Lasso 条件重要性
+
+每个维度被选中的非零系数个数：中位数 22，最少 7，最多 82；
+交叉验证选出的 alpha 中位数 0.0876。
+Lasso 把同组高度相关的化合物压到只剩一个代表，这正是「关键因素」要的效果。
+
+## 3 bootstrap 入选频率
+
+200 次重抽样后，入选频率的中位数 0.530（只统计被选中的系数）。
+
+## 4 沿共表达图扩散
+
+图覆盖 231 个化合物节点，扩散系数取 0.5（一半保留自身、一半来自共表达邻居的均值）。
+
+## 5 各维度的 Top-3 关键因素化合物
+
+| 感官维度 | 第 1 | 第 2 | 第 3 | 该维最强 abs(rho) | 信号 |
+| --- | --- | --- | --- | --- | --- |
+| A_malt_all | beta.phellandrene | X.E..beta.ionone | X5.methylfurfural | 0.361 | 强 |
+| A_malt_grain | isoborneol | X5.methylfurfural | beta.phellandrene | 0.265 | 中 |
+| A_malt_bread | ethyl.tiglate | X4.ethyl.guaiacol | neryl.formate | 0.250 | 中 |
+| A_malt_cara | X2.ethyl.1.hexanol | X4.ethyl.guaiacol | MeSH | 0.350 | 强 |
+| A_malt_burn | y.methyl.1.octanol | MeSH | isobutanol | 0.249 | 中 |
+| A_hops_all | methyl.geranate | ethyl_octanoate | DMS | 0.464 | 强 |
+| A_hops_citrus | trans.dihydro.alpha.terpinyl.acetate | X6.methyl.5.hepten.2.one | geraniol | 0.370 | 强 |
+| A_hops_tropical | DMS | beta.phellandrene | methyl.geranate | 0.314 | 中 |
+| A_hops_noble | ethyl_octanoate | ethyl.hex..2E..enoate | isopentyl.hexanoate | 0.482 | 强 |
+| A_hops_woody | ethyl_2.methyl_butyrate | X.E..ortho.methoxy.cinnamaldehyde | alpha.calacorene | 0.279 | 中 |
+| A_esters_all | acetaldehyde | isoamyl_alcohol | n.hexanol | 0.357 | 强 |
+| A_esters_ethac | acetaldehyde | ethyl_acetate | X2E.6Z.farnesal | 0.356 | 强 |
+| A_esters_isoaa | isopentyl_acetate | n.hexanol | isoamyl_alcohol | 0.340 | 中 |
+| A_esters_flower | beta.phellandrene | X.E..dihydro.apofarnesal | X2.methyltetrahydrofuran.3.one | 0.196 | 弱 |
+| A_esters_fruity | beta.phellandrene | X1.10.di.epi.cubenol | humulene.epoxide.II | 0.232 | 中 |
+| F_malt_all | acetaldehyde | X.E..alpha.ionone | X.E..beta.ionone | 0.471 | 强 |
+| F_malt_grain | X.E..beta.ionone | terpinen.4.ol | isoborneol | 0.276 | 中 |
+| F_malt_bread | terpinen.4.ol | X4.ethyl.phenol | acetaldehyde | 0.378 | 强 |
+| F_malt_cara | acetaldehyde | phenethyl_alcohol | ethyl_propionate | 0.433 | 强 |
+| F_malt_burn | MeSH | X.E..alpha.ionone | X4.methyl.1.pentanol | 0.403 | 强 |
+| F_hops_all | cis.dihydro.beta.terpineol | DMS | butyl.acetate | 0.501 | 强 |
+| F_hops_citrus | geosmin | geraniol | cis.dihydro.beta.terpineol | 0.285 | 中 |
+| F_hops_tropical | X6.methyl.5.hepten.2.one | DMS | terpinolene | 0.285 | 中 |
+| F_hops_noble | ethyl_octanoate | ethyl.hex..2E..enoate | ethyl_hexanoate | 0.505 | 强 |
+| F_hops_woody | isobutanol | cis.dihydro.beta.terpineol | neo.allo.ocimene | 0.346 | 中 |
+| F_esters_all | acetaldehyde | phenethyl_alcohol | X1.10.di.epi.cubenol | 0.404 | 强 |
+| F_esters_ethac | ethyl_acetate | acetaldehyde | X2E.6Z.farnesal | 0.503 | 强 |
+| F_esters_isoaa | isopentyl_acetate | X13.epi.manool.oxide | acetaldehyde | 0.305 | 中 |
+| F_esters_flower | beta.phellandrene | eucalyptol | X2.methyltetrahydrofuran.3.one | 0.234 | 中 |
+| F_esters_fruity | beta.phellandrene | X1.10.di.epi.cubenol | MeSH | 0.292 | 中 |
+| acidity | isopentyl_acetate | ethyl.lactate | DES | 0.435 | 强 |
+| bitternes | ethyl_octanoate | cis.dihydro.beta.terpineol | butyl.acetate | 0.593 | 强 |
+| sweetness | ethyl_octanoate | X2.undecanol | furfural | 0.391 | 强 |
+| X4vg | X4VG | neryl.formate | prenyl.isobutyrate | 0.473 | 强 |
+| diacetyl | beta.phellandrene | vinyl.caprylate | pentyl.octanoate | 0.323 | 中 |
+| dms | caryophylla.4.12..8.13..dien.5.alpha.ol | beta.phellandrene | ethyl_isovalerate | 0.217 | 弱 |
+| metallic | ethyl_isovalerate | isopentyl.butanoate | X6.methyl.5.hepten.2.one | 0.250 | 中 |
+| stale_hops | X.E..ortho.methoxy.cinnamaldehyde | gamma.eudesmol | X1.10.di.epi.cubenol | 0.300 | 中 |
+| t2n | alpha.phellandrene | vinyl.caprylate | geraniol | 0.214 | 弱 |
+| orange | X1.alpha.terpineol | limonene | terpinolene | 0.367 | 强 |
+| coriander | geraniol | linalool | X1.alpha.terpineol | 0.238 | 中 |
+| clove | eucalyptol | limonene | linalool | 0.342 | 中 |
+| lactic | isopentyl_acetate | X5.methylfurfural | DES | 0.443 | 强 |
+| acetic | DES | isopentyl_acetate | ethyl.lactate | 0.406 | 强 |
+| barnyard | gamma.eudesmol | X.E..ortho.methoxy.cinnamaldehyde | X1.10.di.epi.cubenol | 0.285 | 中 |
+| alcohol | X3.methyl.2.hexanol | acetaldehyde | ethyl_octanoate | 0.619 | 强 |
+| aftertaste | ethyl_isovalerate | acetaldehyde | ethyl_octanoate | 0.506 | 强 |
+| body | X3.methyl.2.hexanol | MeSH | n.octanol | 0.555 | 强 |
+| co2 | ethyl_octanoate | X3.methyl.2.hexanol | butyl.acetate | 0.553 | 强 |
+| overall | ethyl_acetate | X2.butyloctanoate | cis.linalool.oxide | 0.325 | 中 |
+
+按 signal 强弱分：强（abs(rho) >= 0.35）26 个维度，中 21 个，弱（< 0.22）3 个。
+表里最后两列是这份 Top-3 的可信度：该维最强 abs(rho) 是化合物候选里最大的单变量相关，
+强信号（>=0.35）的维度可以直接当结论用；弱信号（<0.22）的维度即使给出前三名，
+也只是「相对最强的三个」，任何单个化合物都解释不了多少秩方差，不宜作化学解释。
+
+150 个席位的平均 bootstrap 入选频率 0.754，其中超过 0.5 的 137 个。
+入选频率低于 0.5 的席位说明该因素在重抽样中不稳定，只能算候选。
+
+还有 14 个维度的第一名是负相关（A_malt_all -0.32、A_malt_grain -0.22、A_malt_cara -0.32、F_malt_grain -0.25、F_malt_bread -0.32、acidity -0.37）。
+负相关说明该化合物升高时这个感官反而降低，化学上未必讲得通，更可能是风格混杂的证据：
+比如酸类维度挑出的是酯类化合物，而酯高、酸低的样本恰好集中在某几个风格里。
+这类维度建议与第 7.1 节的理化指标一起看，理化指标的符号更可靠。
+
+## 6 化学合理性
+
+6.csv 是 250 个样本的全样本化合物-感官 Spearman，与本步的 rho 是同一统计量。
+150 个 Top-3 席位里能对上 58 个，方向一致 58 个，占 100.0%，说明读表与符号约定没有出错。
+它能校验相关这一侧，但不能校验多变量选择这一侧，那一侧要靠 Lasso 的选择频率与阈值判断。
+
+18 个关键因素在阈值表里有实测阈值，气味活度比 OAV = 中位浓度 / 阈值：
+
+| 化合物 | 列的标度 | 阈值（原单位） | 中位浓度 | OAV |
+| --- | --- | --- | --- | --- |
+| linalool | raw | 0.02729 | 0.3706 | 13.6 |
+| geraniol | raw | 0.0315 | 0.1379 | 4.38 |
+| isopentyl_acetate | log10 | 0.6033 | 2.181 | 3.62 |
+| ethyl_acetate | log10 | 24 | 27.66 | 1.15 |
+| ethyl_hexanoate | log10 | 0.23 | 0.2358 | 1.03 |
+| isoamyl_alcohol | log10 | 40.02 | 40.54 | 1.01 |
+| ethyl_octanoate | log10 | 0.7 | 0.4957 | 0.708 |
+| DES | log10 | 1.2 | 0.6135 | 0.511 |
+| X1.alpha.terpineol | raw | 1.5 | 0.4027 | 0.268 |
+| phenethyl_alcohol | log10 | 35.01 | 8.708 | 0.249 |
+| ethyl_2.methyl_butyrate | log10 | 0.027 | 0.005173 | 0.192 |
+| isobutanol | log10 | 80 | 11.04 | 0.138 |
+| acetaldehyde | log10 | 50 | 4.105 | 0.0821 |
+| DMS | raw | 17.25 | 1.384 | 0.0803 |
+| ethyl_isovalerate | log10 | 0.1 | 0.0057 | 0.057 |
+| X4VG | log10 | 0.2063 | 0.009702 | 0.047 |
+| ethyl_propionate | log10 | 10 | 0.06839 | 0.00684 |
+| furfural | raw | 60 | 0.008294 | 0.000138 |
+
+OAV 大于 1 的有 6/18 个。
+阈值表混用 mg/L、g/L、ug/L，与各列原始单位未必一致，所以这里只看量级是否荒谬。
+
+## 7 同名因素自检
+
+自检要分两类看：一类是同名的**理化指标**（不是化合物，按题目口径不进化合物榜），
+另一类是同名的**化合物**（应当出现在前三）。
+
+### 7.1 同名的理化指标
+
+| 感官维度 | 同名理化指标 | 它的 rho | 在全部 239 个候选里的名次 | 化合物榜第 1 | 化合物榜第 1 的 rho |
+| --- | --- | --- | --- | --- | --- |
+| bitternes | bitterness | +0.682 | 1 | ethyl_octanoate | +0.593 |
+| lactic | lactic_acid.mg.L. | +0.448 | 2 | isopentyl_acetate | -0.410 |
+| acetic | acetic_acid.g.L. | +0.354 | 7 | DES | -0.279 |
+| alcohol | ethanol..v.v. | +0.817 | 1 | X3.methyl.2.hexanol | -0.569 |
+| body | kcalperc | +0.687 | 2 | X3.methyl.2.hexanol | -0.547 |
+
+这张表说明两件事。第一，苦味、乳酸、乙酸、酒精这几个维度本身就有对应的理化测量，
+它们的秩相关最高能到 0.68（bitterness 对 bitternes），这几个指标就是这些维度最干净的证据，
+只是题目问的是化合物，所以它们单独列在这里、不进第 5 节的化合物榜。
+第二，1.csv 里没有异 α 酸（只有 alpha.humulene、beta.humulene 这类酒花油成分，不是苦味物质），
+所以 bitternes 维度的化合物榜只能是「与苦味共变」的挥发性成分，反映的是风格混杂，
+不能读成「这些酯导致了苦味」。
+
+### 7.2 同名的化合物
+
+| 感官维度 | 同名化合物 | 它的 rho | 它在化合物榜里的名次 |
+| --- | --- | --- | --- |
+| dms | DMS | +0.088 | 未入前三 |
+| diacetyl | X2.3.butanedione | -0.093 | 未入前三 |
+| t2n | X.E..2.nonenal | -0.151 | 未入前三 |
+| X4vg | X4VG | +0.473 | 1 |
+
+这里没有全过：3 个维度的同名化合物没能进前三，分别是 dms（rho +0.088）、diacetyl（rho -0.093）、t2n（rho -0.151）。
+X4VG 在 X4vg 维度上排第一，这个维度的信号是真的，方法也确实抓到了；
+剩下三个的实测浓度与同名感官维度的秩相关只有 0.09 到 0.15，远低于「化学上应当强相关」的预期。
+原因大概是三条：一是这三类缺陷物质在多数样本里低于阈值，感官打分更多受偶然污染与个体敏感度影响；
+二是面板评分本身有噪声；三是这几列大量左删失（多数样本压在检出限），秩相关被并列值稀释。
+因此本报告不宣称「DMS 是 dms 维度的关键因素」，只如实报告它在数据里排在第几位。
+
+
+最终版 Top-3 已写入 E:\Documents\MyProgramProject\mathmodel_DSH\main\Output\Q2
