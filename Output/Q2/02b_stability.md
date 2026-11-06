@@ -1,0 +1,249 @@
+# Q2 步骤三：Top-3 结果的补算与稳定性
+
+候选因素 218 个，目标 50 个感官维度。
+
+相关系数已改为全样本口径：步骤二里存的是第一次 bootstrap 重抽样的值，只用于算入选频率，
+对外报告的关键因素强度必须用全样本值，否则同一张表里两种口径混用。
+
+## 1 各感官维度的 Top-3 关键因素
+
+| 感官维度 | 第 1（rho） | 第 2（rho） | 第 3（rho） |
+| --- | --- | --- | --- |
+| A_malt_all | color.EBC. (+0.54) | protein.g.L. (+0.43) | kcalperc (+0.39) |
+| A_malt_grain | terpinen.4.ol (-0.26) | beta.phellandrene (-0.25) | isoborneol (-0.22) |
+| A_malt_bread | color.EBC. (+0.33) | kcalperc (+0.30) | protein.g.L. (+0.26) |
+| A_malt_cara | color.EBC. (+0.56) | protein.g.L. (+0.43) | kcalperc (+0.39) |
+| A_malt_burn | color.EBC. (+0.32) | pH (+0.26) | protein.g.L. (+0.21) |
+| A_hops_all | ethyl_octanoate (+0.46) | ethyl_decanoate (+0.43) | X.E..2.nonenal (+0.43) |
+| A_hops_citrus | humulene.epoxide.II (+0.36) | CO2.PSI. (+0.33) | linalool (+0.33) |
+| A_hops_tropical | DMS (+0.31) | methyl.geranate (+0.26) | X3.furanmethanol (-0.26) |
+| A_hops_noble | ethyl_octanoate (+0.48) | ethyl_decanoate (+0.47) | isopentyl.hexanoate (+0.39) |
+| A_hops_woody | neryl.propanoate (+0.26) | X.E..ortho.methoxy.cinnamaldehyde (+0.24) | alloaromadendrene.epoxide (+0.25) |
+| A_esters_all | kcalperc (+0.37) | acetaldehyde (+0.35) | n.hexanol (+0.36) |
+| A_esters_ethac | ethyl_acetate (+0.36) | ethanol..v.v. (+0.33) | ethyl.hexadecanoate (+0.27) |
+| A_esters_isoaa | n.hexanol (+0.34) | isopentyl_acetate (+0.28) | isoamyl_alcohol (+0.22) |
+| A_esters_flower | beta.phellandrene (+0.20) | X.E..dihydro.apofarnesal (-0.16) | ethyl.benzoate (+0.17) |
+| A_esters_fruity | beta.phellandrene (+0.23) | lactic_acid.mg.L. (+0.19) | germacrene.D (+0.17) |
+| F_malt_all | kcalperc (+0.49) | color.EBC. (+0.47) | ethanol..v.v. (+0.47) |
+| F_malt_grain | terpinen.4.ol (-0.25) | X.E..beta.ionone (-0.25) | selin.11.en.4.alpha.ol (-0.22) |
+| F_malt_bread | acetaldehyde (+0.38) | glycerol (+0.37) | kcalperc (+0.37) |
+| F_malt_cara | kcalperc (+0.48) | color.EBC. (+0.49) | acetaldehyde (+0.43) |
+| F_malt_burn | pH (+0.41) | bitterness (+0.41) | ethanol..v.v. (+0.43) |
+| F_hops_all | bitterness (+0.54) | ethyl_octanoate (+0.50) | methyl.geranate (+0.44) |
+| F_hops_citrus | protein.g.L. (-0.30) | color.EBC. (-0.27) | ethyl.furoate (-0.27) |
+| F_hops_tropical | DMS (+0.28) | hexyl.acetate (+0.28) | terpinolene (+0.25) |
+| F_hops_noble | ethyl_octanoate (+0.51) | bitterness (+0.51) | ethyl_decanoate (+0.46) |
+| F_hops_woody | bitterness (+0.36) | isobutanol (+0.32) | tau.muurolol (+0.30) |
+| F_esters_all | kcalperc (+0.48) | protein.g.L. (+0.41) | acetaldehyde (+0.40) |
+| F_esters_ethac | ethyl_acetate (+0.50) | ethanol..v.v. (+0.47) | glycerol (+0.44) |
+| F_esters_isoaa | kcalperc (+0.30) | n.hexanol (+0.31) | isopentyl_acetate (+0.27) |
+| F_esters_flower | beta.phellandrene (+0.23) | isopentyl.butanoate (-0.20) | X.E..dihydro.apofarnesal (-0.18) |
+| F_esters_fruity | DES (-0.29) | protein.g.L. (+0.28) | acetic_acid.g.L. (+0.24) |
+| acidity | pH (-0.50) | ethyl.phenylacetate (+0.43) | prenyl.isobutyrate (+0.44) |
+| bitternes | bitterness (+0.68) | ethyl_octanoate (+0.59) | ethyl_decanoate (+0.56) |
+| sweetness | ethyl_decanoate (-0.39) | GFS (+0.37) | iron (+0.36) |
+| X4vg | delta.terpinyl.acetate (+0.40) | neryl.formate (-0.38) | prenyl.isobutyrate (-0.37) |
+| diacetyl | ethyl_decanoate (-0.28) | alpha.calacorene (-0.27) | eugenol (-0.32) |
+| dms | protein.g.L. (-0.32) | color.EBC. (-0.25) | X2.acetylfuran (-0.17) |
+| metallic | ethyl_isovalerate (-0.25) | iron (+0.24) | alpha.calacorene (-0.23) |
+| stale_hops | X2.undecanol (+0.30) | alloaromadendrene.epoxide (+0.28) | X.E..ortho.methoxy.cinnamaldehyde (+0.25) |
+| t2n | beta.phellandrene (-0.21) | terpinen.4.ol (-0.20) | glycerol (-0.18) |
+| orange | camphor (+0.37) | beta.phellandrene (+0.29) | terpinen.4.ol (+0.29) |
+| coriander | ethyl..E..linalool (+0.23) | camphor (+0.22) | terpinen.4.ol (+0.23) |
+| clove | camphor (+0.21) | beta.phellandrene (+0.18) | isopentyl_acetate (+0.15) |
+| lactic | lactic_acid.mg.L. (+0.45) | pH (-0.44) | prenyl.isobutyrate (+0.43) |
+| acetic | prenyl.isobutyrate (+0.41) | ethyl_isovalerate (+0.39) | ethyl.phenylacetate (+0.38) |
+| barnyard | X2.undecanol (+0.28) | neryl.formate (+0.28) | alloaromadendrene.epoxide (+0.27) |
+| alcohol | ethanol..v.v. (+0.82) | kcalperc (+0.73) | ethyl_octanoate (+0.62) |
+| aftertaste | ethanol..v.v. (+0.52) | ethyl_octanoate (+0.51) | ethyl_decanoate (+0.49) |
+| body | kcalperc (+0.69) | ethanol..v.v. (+0.72) | glycerol (+0.57) |
+| co2 | ethyl_octanoate (+0.55) | ethanol..v.v. (+0.50) | CO2.PSI. (+0.46) |
+| overall | ethyl_acetate (+0.32) | unfermentables (+0.23) | X2.butyloctanoate (+0.22) |
+
+150 个 Top-3 席位里，93 个是化合物，57 个是理化指标（IBU、色度、酒精度、pH、热量、蛋白、铁、二氧化碳、残糖等）。
+理化指标本身不是「化合物」，但它们是有机化合物谱的线性组合，在树模型里充当了整组同源化合物的替身；
+题目问的关键因素化合物，应以 kind 为「化合物」的行为准，理化指标行保留以便解释。
+
+## 2 稳定性
+
+| 感官维度 | Top-3 的 bootstrap 入选频率均值 | 单变量 Top-3 与多变量 Top-3 重合数 | Jaccard |
+| --- | --- | --- | --- |
+| A_malt_all | 0.71 | 2 | 0.50 |
+| A_malt_grain | 0.37 | 0 | 0.00 |
+| A_malt_bread | 0.45 | 1 | 0.20 |
+| A_malt_cara | 0.81 | 2 | 0.50 |
+| A_malt_burn | 0.45 | 2 | 0.50 |
+| A_hops_all | 0.52 | 2 | 0.50 |
+| A_hops_citrus | 0.37 | 0 | 0.00 |
+| A_hops_tropical | 0.42 | 1 | 0.20 |
+| A_hops_noble | 0.66 | 2 | 0.50 |
+| A_hops_woody | 0.15 | 0 | 0.00 |
+| A_esters_all | 0.62 | 1 | 0.20 |
+| A_esters_ethac | 0.30 | 0 | 0.00 |
+| A_esters_isoaa | 0.58 | 1 | 0.20 |
+| A_esters_flower | 0.16 | 1 | 0.20 |
+| A_esters_fruity | 0.28 | 1 | 0.20 |
+| F_malt_all | 0.67 | 1 | 0.20 |
+| F_malt_grain | 0.20 | 0 | 0.00 |
+| F_malt_bread | 0.40 | 1 | 0.20 |
+| F_malt_cara | 0.81 | 2 | 0.50 |
+| F_malt_burn | 0.56 | 1 | 0.20 |
+| F_hops_all | 0.58 | 2 | 0.50 |
+| F_hops_citrus | 0.33 | 1 | 0.20 |
+| F_hops_tropical | 0.40 | 0 | 0.00 |
+| F_hops_noble | 0.71 | 2 | 0.50 |
+| F_hops_woody | 0.26 | 1 | 0.20 |
+| F_esters_all | 0.71 | 2 | 0.50 |
+| F_esters_ethac | 0.76 | 2 | 0.50 |
+| F_esters_isoaa | 0.53 | 0 | 0.00 |
+| F_esters_flower | 0.33 | 1 | 0.20 |
+| F_esters_fruity | 0.48 | 0 | 0.00 |
+| acidity | 0.56 | 1 | 0.20 |
+| bitternes | 0.81 | 2 | 0.50 |
+| sweetness | 0.49 | 2 | 0.50 |
+| X4vg | 0.42 | 1 | 0.20 |
+| diacetyl | 0.43 | 1 | 0.20 |
+| dms | 0.45 | 2 | 0.50 |
+| metallic | 0.31 | 2 | 0.50 |
+| stale_hops | 0.41 | 0 | 0.00 |
+| t2n | 0.25 | 1 | 0.20 |
+| orange | 0.48 | 1 | 0.20 |
+| coriander | 0.19 | 0 | 0.00 |
+| clove | 0.12 | 1 | 0.20 |
+| lactic | 0.43 | 2 | 0.50 |
+| acetic | 0.51 | 1 | 0.20 |
+| barnyard | 0.44 | 1 | 0.20 |
+| alcohol | 0.75 | 2 | 0.50 |
+| aftertaste | 0.61 | 1 | 0.20 |
+| body | 0.81 | 2 | 0.50 |
+| co2 | 0.76 | 2 | 0.50 |
+| overall | 0.28 | 1 | 0.20 |
+
+Jaccard 均值 0.268，完全一致 0 维，完全不一致 10 维。
+Top-3 的 bootstrap 入选频率均值 0.482，超过 0.5 的席位 62/150。
+
+这两组数说明什么：入选频率衡量的是单变量排序在重抽样下的稳定度，中位数在 0.4 到 0.8 之间，
+说明排序本身还算稳；而单变量与多变量的 Top-3 重合度低，说明「单独相关最强」和「联合建模里最有增量」
+不是同一批化合物，这正是指标设计里要求做跨方法一致性的原因。多变量那一侧更接近因果意义上的关键因素，
+因为它控制住了其余化合物之后再看边际信息量。
+
+全体 218 x 50 个组合上，|单变量相关| 与图扩散置换重要性的秩相关 0.087。
+
+## 3 化学合理性
+
+6.csv 的 44 行化合物名与 1.csv 字段名不同，用 8.xlsx 的 field_name_R 建立 231 条映射；
+它的 50 个列名也是面板口语名，用 Sensory names 表建立映射，50 个维度里对上 49 个。
+6.csv 给出的正是全样本化合物-感官 Spearman，和本方法的 rho 是同一个统计量，
+因此这一核对验证的是「字段名到化学名的映射、读表、符号约定」没有出错，属于流程校验；
+它不能验证多变量重要性那一侧，那一侧只能靠 bootstrap 与化学阈值来支撑。
+
+| 感官维度 | 因素 | 本方法 rho | 6.csv rho | 方向一致 |
+| --- | --- | --- | --- | --- |
+| A_malt_all | color.EBC. | +0.541 | +0.541 | 是 |
+| A_malt_all | protein.g.L. | +0.431 | +0.431 | 是 |
+| A_malt_all | kcalperc | +0.386 | +0.386 | 是 |
+| A_malt_bread | color.EBC. | +0.329 | +0.329 | 是 |
+| A_malt_bread | kcalperc | +0.300 | +0.300 | 是 |
+| A_malt_bread | protein.g.L. | +0.261 | +0.261 | 是 |
+| A_malt_cara | color.EBC. | +0.564 | +0.564 | 是 |
+| A_malt_cara | protein.g.L. | +0.433 | +0.433 | 是 |
+| A_malt_cara | kcalperc | +0.394 | +0.394 | 是 |
+| A_malt_burn | color.EBC. | +0.324 | +0.324 | 是 |
+| A_malt_burn | pH | +0.265 | +0.265 | 是 |
+| A_malt_burn | protein.g.L. | +0.211 | +0.211 | 是 |
+| A_hops_all | ethyl_octanoate | +0.464 | +0.464 | 是 |
+| A_hops_all | ethyl_decanoate | +0.428 | +0.428 | 是 |
+| A_hops_citrus | CO2.PSI. | +0.329 | +0.329 | 是 |
+| A_hops_citrus | linalool | +0.327 | +0.327 | 是 |
+| A_hops_tropical | DMS | +0.314 | +0.314 | 是 |
+| A_hops_noble | ethyl_octanoate | +0.482 | +0.482 | 是 |
+| A_hops_noble | ethyl_decanoate | +0.469 | +0.469 | 是 |
+| A_esters_all | kcalperc | +0.365 | +0.365 | 是 |
+
+可比对的 88 个组合里方向一致 88 个，占 100.0%。
+
+## 4 只在化合物集合内排序的正式 Top-3
+
+理化指标有 16 个、化合物 202 个。把理化指标排除后重新取前三：
+
+| 感官维度 | 第 1 | 第 2 | 第 3 |
+| --- | --- | --- | --- |
+| A_malt_all | methylpyrazine | beta.phellandrene | acetaldehyde |
+| A_malt_grain | terpinen.4.ol | beta.phellandrene | isoborneol |
+| A_malt_bread | neryl.formate | car.3.en.2.one | X4.ethyl.phenol |
+| A_malt_cara | acetaldehyde | X2.ethyl.1.hexanol | phenethyl_acetate |
+| A_malt_burn | X2.acetylpyrrole | methylpyrazine | MeSH |
+| A_hops_all | ethyl_octanoate | ethyl_decanoate | X.E..2.nonenal |
+| A_hops_citrus | humulene.epoxide.II | linalool | X1.2.dihydro.8.hydroxy..2E..linalool |
+| A_hops_tropical | DMS | methyl.geranate | X3.furanmethanol |
+| A_hops_noble | ethyl_octanoate | ethyl_decanoate | isopentyl.hexanoate |
+| A_hops_woody | neryl.propanoate | X.E..ortho.methoxy.cinnamaldehyde | alloaromadendrene.epoxide |
+| A_esters_all | acetaldehyde | n.hexanol | ethyl_acetate |
+| A_esters_ethac | ethyl_acetate | ethyl.hexadecanoate | isopentyl.hexanoate |
+| A_esters_isoaa | n.hexanol | isopentyl_acetate | isoamyl_alcohol |
+| A_esters_flower | beta.phellandrene | X.E..dihydro.apofarnesal | ethyl.benzoate |
+| A_esters_fruity | beta.phellandrene | germacrene.D | X1.10.di.epi.cubenol |
+| F_malt_all | acetaldehyde | X4.ethyl.phenol | X.E..alpha.ionone |
+| F_malt_grain | terpinen.4.ol | X.E..beta.ionone | selin.11.en.4.alpha.ol |
+| F_malt_bread | acetaldehyde | isopentyl_acetate | ethyl.tiglate |
+| F_malt_cara | acetaldehyde | X2.acetylpyrrole | isopentyl_acetate |
+| F_malt_burn | MeSH | ethyl_decanoate | isobutanol |
+| F_hops_all | ethyl_octanoate | methyl.geranate | ethyl_decanoate |
+| F_hops_citrus | ethyl.furoate | citronellol | geraniol |
+| F_hops_tropical | DMS | hexyl.acetate | terpinolene |
+| F_hops_noble | ethyl_octanoate | ethyl_decanoate | isobutanol |
+| F_hops_woody | isobutanol | tau.muurolol | caryophyllene.oxide |
+| F_esters_all | acetaldehyde | ethyl_acetate | n.hexanol |
+| F_esters_ethac | ethyl_acetate | acetaldehyde | isoamyl_alcohol |
+| F_esters_isoaa | n.hexanol | isopentyl_acetate | isobutyl_acetate |
+| F_esters_flower | beta.phellandrene | isopentyl.butanoate | X.E..dihydro.apofarnesal |
+| F_esters_fruity | DES | beta.phellandrene | caryophyllene.oxide |
+| acidity | ethyl.phenylacetate | prenyl.isobutyrate | perillyl.acetate |
+| bitternes | ethyl_octanoate | ethyl_decanoate | MeSH |
+| sweetness | ethyl_decanoate | isopentyl.hexanoate | neryl.propanoate |
+| X4vg | delta.terpinyl.acetate | neryl.formate | prenyl.isobutyrate |
+| diacetyl | ethyl_decanoate | alpha.calacorene | eugenol |
+| dms | X2.acetylfuran | amyl.acetate | X.Z..dihydro.apofarnesal |
+| metallic | ethyl_isovalerate | alpha.calacorene | isopentyl.butanoate |
+| stale_hops | X2.undecanol | alloaromadendrene.epoxide | X.E..ortho.methoxy.cinnamaldehyde |
+| t2n | beta.phellandrene | terpinen.4.ol | phenethyl_alcohol |
+| orange | camphor | beta.phellandrene | terpinen.4.ol |
+| coriander | ethyl..E..linalool | camphor | terpinen.4.ol |
+| clove | camphor | beta.phellandrene | isopentyl_acetate |
+| lactic | prenyl.isobutyrate | perillyl.acetate | butyl.acetate |
+| acetic | prenyl.isobutyrate | ethyl_isovalerate | ethyl.phenylacetate |
+| barnyard | X2.undecanol | neryl.formate | alloaromadendrene.epoxide |
+| alcohol | ethyl_octanoate | ethyl_hexanoate | acetaldehyde |
+| aftertaste | ethyl_octanoate | ethyl_decanoate | X.E..2.nonenal |
+| body | ethyl_hexanoate | ethyl_octanoate | X3.methyl.2.hexanol |
+| co2 | ethyl_octanoate | ethyl_hexanoate | ethyl_decanoate |
+| overall | ethyl_acetate | X2.butyloctanoate | pentyl.octanoate |
+
+18 个 Top-3 因素在 8.xlsx 里有实测阈值，气味活度比 OAV = 中位浓度 / 阈值。
+中位浓度按列的标度还原：log10 列取 10^z，原始浓度列直接取 z。
+
+| 化合物 | 列的标度 | 阈值（原单位） | 中位浓度 | OAV |
+| --- | --- | --- | --- | --- |
+| linalool | raw | 0.02729 | 0.3706 | 13.6 |
+| citronellol | raw | 0.0245 | 0.2153 | 8.79 |
+| geraniol | raw | 0.0315 | 0.1379 | 4.38 |
+| isopentyl_acetate | log10 | 0.6033 | 2.181 | 3.62 |
+| ethyl_acetate | log10 | 24 | 27.66 | 1.15 |
+| ethyl_hexanoate | log10 | 0.23 | 0.2358 | 1.03 |
+| isoamyl_alcohol | log10 | 40.02 | 40.54 | 1.01 |
+| ethyl_octanoate | log10 | 0.7 | 0.4957 | 0.708 |
+| DES | log10 | 1.2 | 0.6135 | 0.511 |
+| phenethyl_alcohol | log10 | 35.01 | 8.708 | 0.249 |
+| isobutanol | log10 | 80 | 11.04 | 0.138 |
+| phenethyl_acetate | log10 | 1.763 | 0.1963 | 0.111 |
+| ethyl_decanoate | log10 | 1.035 | 0.1121 | 0.108 |
+| acetaldehyde | log10 | 50 | 4.105 | 0.0821 |
+| DMS | raw | 17.25 | 1.384 | 0.0803 |
+| isobutyl_acetate | log10 | 1 | 0.07136 | 0.0714 |
+| ethyl_isovalerate | log10 | 0.1 | 0.0057 | 0.057 |
+| methylpyrazine | raw | 1 | 0.0002934 | 0.000293 |
+
+OAV 大于 1 的有 7/18 个，即这些化合物在典型浓度下本身就超过阈值、确实能被闻到，作为关键因素在化学上说得通。
+OAV 小于 1 的不能据此否定：这些物质可能是协同增香、或是被更高阈值掩盖后仍通过交互作用影响感知。
+阈值表本身混用 mg/L、g/L、ug/L 三种单位，与各列的原始单位未必一致，
+所以这里的 OAV 只用来判断量级是否荒谬，不能当成精确的气味活度比。
