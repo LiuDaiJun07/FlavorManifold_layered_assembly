@@ -1,0 +1,5 @@
+{
+  "fold_ids_equal": true,
+  "predictions_bitwise_equal": true,
+  "max_abs_difference": 0.0
+}

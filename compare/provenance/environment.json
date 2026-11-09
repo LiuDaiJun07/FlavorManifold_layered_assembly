@@ -1,0 +1,32 @@
+{
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "logical_cpus": 8,
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.6",
+    "openpyxl": "3.1.5",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.5.0"
+  },
+  "inputs_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "5.csv": "c512eed108de6f98e0c6ed66497ed2319745d30ca7f6f4acac4f175a4bdcde9a",
+    "6.csv": "a55004fb0390299a5c8089f0c37d3bfc006e7049963c84d7d9652affabe614ae",
+    "7.csv": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a",
+    "数据说明.txt": "40813e273e081ae0dc6d6fa76838c5cdbaa721335df3648b4b29d5f76b6378d7"
+  },
+  "protocol": {
+    "outer_folds": "Output/Q1/06b_members.npz fold_id",
+    "NJOB": 6,
+    "TREE_SCALE": 1,
+    "BLAS_threads": 1
+  }
+}

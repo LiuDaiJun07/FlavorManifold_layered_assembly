@@ -1,0 +1,8 @@
+{
+  "compare\\q3\\04_gen_baselines.py": "78d55c31f4b6757f81ff1a676bd7ddd693b1a6a2a9e55ff9dc94ac1286c27a25",
+  "compare\\q3\\05_transfer_baselines.py": "413ff623b8959cdc1b18b25d8726f4af9b9a5eac3a23c2152a93e782655f82ec",
+  "compare\\q3\\06_guard_cost.py": "c2542d2fd2d28b50141092441c8df756bfae89d7521911669c63cc51a6b45b34",
+  "compare\\q3\\07_readout_robust.py": "aa487240c8e17512c2b4bb09b32a84bf7df00f6d5d1c3876f4b051797d2c49be",
+  "compare\\q3\\08_path_controls.py": "cf7dfc77faa2470a9247e7eefd61aff6d70bebf5899cfac9692de010e6886372",
+  "compare\\q3\\shared.py": "bb04def3a6ac197c61334c0a7c53dd69fc40003c3c345b13556b9ba12e8e32fb"
+}

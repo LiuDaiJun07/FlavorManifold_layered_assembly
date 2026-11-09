@@ -1,0 +1,12 @@
+{
+  "original_inputs_unchanged": true,
+  "prediction_files_checked": 1179,
+  "all_predictions_finite": true,
+  "solver_warning_log_counts": {
+    "C10_selection_precompute.log": 84
+  },
+  "all_run_states_completed": true,
+  "frequency_ci_rows_checked": 200,
+  "coefficient_ci_rows_checked": 50,
+  "mainline_unchanged": true
+}

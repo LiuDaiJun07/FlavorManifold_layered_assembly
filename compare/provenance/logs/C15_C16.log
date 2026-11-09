@@ -1,0 +1,11 @@
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\04_gen_baselines.md

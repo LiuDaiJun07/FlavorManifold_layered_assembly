@@ -1,0 +1,8 @@
+{
+  "checks": {
+    "mg_ug_conversion": true,
+    "equal_sources_jaccard": true,
+    "empty_sources_no_numeric_oav": true
+  },
+  "all_passed": true
+}

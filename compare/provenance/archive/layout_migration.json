@@ -1,0 +1,12 @@
+{
+  "migrated": true,
+  "outputs_unchanged": true,
+  "verified_output_files": 1572,
+  "scripts": "compare/scripts/q1,q2,q3",
+  "outputs": "compare/Q1,Q2,Q3",
+  "source_path_mapping": {
+    "compare/q1/": "compare/scripts/q1/",
+    "compare/q2/": "compare/scripts/q2/",
+    "compare/q3/": "compare/scripts/q3/"
+  }
+}

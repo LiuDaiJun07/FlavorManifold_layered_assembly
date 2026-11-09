@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "fold_coverage": true,
+    "fold_train_test_disjoint": true,
+    "cached_folds_match_split": true,
+    "original_folds_exact_match": true,
+    "wilcoxon_identical": true,
+    "corrected_roundtrip": true,
+    "corrected_gradient": true,
+    "inner_stats_unchanged_by_validation": true,
+    "all_missing_training_column_removed": true,
+    "stress_features_finite": true
+  },
+  "all_passed": true,
+  "gradient_max_error": 1.0210942924526734e-09,
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3"
+}

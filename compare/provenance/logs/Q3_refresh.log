@@ -1,0 +1,20 @@
+REFRESH 04_gen_baselines.py
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+E:\ProgramData\anaconda3\Lib\site-packages\scipy\stats\_axis_nan_policy.py:579: RuntimeWarning: ks_2samp: Exact calculation unsuccessful. Switching to method=asymp.
+  res = hypotest_fun_out(*samples, **kwds)
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\04_gen_baselines.md
+REFRESH 05_transfer_baselines.py
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\05_transfer_baselines.md
+REFRESH 06_guard_cost.py
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\06_guard_cost.md
+REFRESH 07_readout_robust.py
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\07_readout_robust.md
+REFRESH 08_path_controls.py
+REPORT E:\Documents\MyProgramProject\pythonProject\KNN_ET_Hyperbolic\FlavorManifold layered assembly\compare\Q3\08_path_controls.md

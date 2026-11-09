@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "artifact_contents_preserved": true,
+    "completed_execution_paths_valid": true,
+    "original_src_output_unchanged": true,
+    "original_inputs_unchanged": true,
+    "cached_prediction_reused": true,
+    "markdown_links_valid": true,
+    "old_flat_directories_absent": true
+  },
+  "all_passed": true,
+  "migrated_artifacts": 1575,
+  "parsed_python_files": 32,
+  "changed_artifacts": [],
+  "broken_links": [],
+  "changed_mainline": [],
+  "changed_inputs": []
+}

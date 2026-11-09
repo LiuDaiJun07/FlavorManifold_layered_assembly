@@ -1,0 +1,180 @@
+{
+  "C15_C16": {
+    "state": "completed",
+    "script": "scripts/q3/04_gen_baselines.py",
+    "started": "2026-11-07 19:05:39",
+    "script_sha256": "78d55c31f4b6757f81ff1a676bd7ddd693b1a6a2a9e55ff9dc94ac1286c27a25",
+    "exit_code": 0,
+    "elapsed_seconds": 106.20937395095825,
+    "executed_path_before_layout_migration": "q3/04_gen_baselines.py"
+  },
+  "C17": {
+    "state": "completed",
+    "script": "scripts/q3/05_transfer_baselines.py",
+    "started": "2026-11-07 19:07:25",
+    "script_sha256": "4ed9541c87db18d180db8125d8cb8e8f9330cbd22b5934775ae9b58e348a8c7e",
+    "exit_code": 0,
+    "elapsed_seconds": 31.534079551696777,
+    "executed_path_before_layout_migration": "q3/05_transfer_baselines.py"
+  },
+  "C18": {
+    "state": "completed",
+    "script": "scripts/q3/06_guard_cost.py",
+    "started": "2026-11-07 19:14:14",
+    "script_sha256": "936a201111c9128e7e5d3a65c7ea95c502474224895089aa601190bd20b3d80d",
+    "exit_code": 0,
+    "elapsed_seconds": 2.420522451400757,
+    "executed_path_before_layout_migration": "q3/06_guard_cost.py"
+  },
+  "C19": {
+    "state": "completed",
+    "script": "scripts/q3/07_readout_robust.py",
+    "started": "2026-11-07 19:08:02",
+    "script_sha256": "aa487240c8e17512c2b4bb09b32a84bf7df00f6d5d1c3876f4b051797d2c49be",
+    "exit_code": 0,
+    "elapsed_seconds": 5.551161050796509,
+    "executed_path_before_layout_migration": "q3/07_readout_robust.py"
+  },
+  "C20": {
+    "state": "completed",
+    "script": "scripts/q3/08_path_controls.py",
+    "started": "2026-11-07 19:08:07",
+    "script_sha256": "1e6a612085e712b2d9f27ea6ac8a520200e0acc021bb14e1a4d2c09575b008e3",
+    "exit_code": 0,
+    "elapsed_seconds": 10.32679796218872,
+    "executed_path_before_layout_migration": "q3/08_path_controls.py"
+  },
+  "C5": {
+    "state": "completed",
+    "script": "scripts/q1/14_fold_sensitivity.py",
+    "started": "2026-11-07 17:47:03",
+    "script_sha256": "5bb31031ad3d484561291b41faede03902499a21fb3334c97bfa7a75c954db82",
+    "exit_code": 0,
+    "elapsed_seconds": 6.543577671051025,
+    "executed_path_before_layout_migration": "q1/14_fold_sensitivity.py"
+  },
+  "C9": {
+    "state": "completed",
+    "script": "scripts/q2/05_confound.py",
+    "started": "2026-11-07 17:47:10",
+    "script_sha256": "a3f36d75e2aa50808f1831e1cba55598fa405159681db4ca03f10242bfab659c",
+    "exit_code": 0,
+    "elapsed_seconds": 8.118796348571777,
+    "executed_path_before_layout_migration": "q2/05_confound.py"
+  },
+  "C8": {
+    "state": "completed",
+    "script": "scripts/q1/17_grade_external.py",
+    "started": "2026-11-07 19:05:27",
+    "script_sha256": "686ff767213d107477a7b4644e38515a3f0edae1dd9beb1630eaebd7bc3980d6",
+    "exit_code": 0,
+    "elapsed_seconds": 5.176589727401733,
+    "executed_path_before_layout_migration": "q1/17_grade_external.py"
+  },
+  "C12": {
+    "state": "completed",
+    "script": "scripts/q2/08_graph_sensitivity.py",
+    "started": "2026-11-07 19:05:32",
+    "script_sha256": "6876dd5a1e315a50741e7b875079d243232c5345d6c16b7ca1a7699a26c6c6a0",
+    "exit_code": 0,
+    "elapsed_seconds": 3.7786855697631836,
+    "executed_path_before_layout_migration": "q2/08_graph_sensitivity.py"
+  },
+  "C14": {
+    "state": "completed",
+    "script": "scripts/q2/09_oav_sensitivity.py",
+    "started": "2026-11-07 19:05:36",
+    "script_sha256": "f5c9c18ce5c0658dbed131e474044938f40ee34015cba0438ccf2c951d472284",
+    "exit_code": 0,
+    "elapsed_seconds": 3.130314588546753,
+    "executed_path_before_layout_migration": "q2/09_oav_sensitivity.py"
+  },
+  "C1": {
+    "state": "completed",
+    "script": "scripts/q1/10_baselines.py",
+    "started": "2026-11-07 17:48:31",
+    "script_sha256": "d59772f4b835e4e7952570be427c89fa776a155057db269dc33567c24863d232",
+    "exit_code": 0,
+    "elapsed_seconds": 1230.2329382896423,
+    "executed_path_before_layout_migration": "q1/10_baselines.py"
+  },
+  "C2": {
+    "state": "completed",
+    "script": "scripts/q1/11_repeated_cv.py",
+    "started": "2026-11-07 19:08:18",
+    "script_sha256": "61831916b3a5aac264aa4c994f9564d4a0caff09fc57a0a4fe13bec08cb4603e",
+    "exit_code": 0,
+    "elapsed_seconds": 6.034243583679199,
+    "executed_path_before_layout_migration": "q1/11_repeated_cv.py"
+  },
+  "C3": {
+    "state": "completed",
+    "script": "scripts/q1/12_hyper_controls.py",
+    "started": "2026-11-07 18:21:40",
+    "script_sha256": "3743f60aa2572b777544699f02faf43c7a68f81c984fd494333ce7acdfa97f77",
+    "exit_code": 0,
+    "elapsed_seconds": 737.4340221881866,
+    "executed_path_before_layout_migration": "q1/12_hyper_controls.py"
+  },
+  "C4": {
+    "state": "completed",
+    "script": "scripts/q1/13_fusion_controls.py",
+    "started": "2026-11-07 19:08:24",
+    "script_sha256": "995239b0df959ef6f4066eaa240af60c1fd5f47c19e93e5a43aa58a36ac99dcf",
+    "exit_code": 0,
+    "elapsed_seconds": 16.76398515701294,
+    "executed_path_before_layout_migration": "q1/13_fusion_controls.py"
+  },
+  "C6": {
+    "state": "completed",
+    "script": "scripts/q1/15_missing_stress.py",
+    "started": "2026-11-07 19:08:41",
+    "script_sha256": "146268ed823a36b6b5034d8325d43d0521166013486683e58d91f154061eaa64",
+    "exit_code": 0,
+    "elapsed_seconds": 6.039833307266235,
+    "executed_path_before_layout_migration": "q1/15_missing_stress.py"
+  },
+  "C7": {
+    "state": "completed",
+    "script": "scripts/q1/16_hyperparam_sensitivity.py",
+    "started": "2026-11-07 19:14:16",
+    "script_sha256": "52cf94317bb02cd987671e354369f1a057767d9b085ae1edde3036a87e747b77",
+    "exit_code": 0,
+    "elapsed_seconds": 3.7985517978668213,
+    "executed_path_before_layout_migration": "q1/16_hyperparam_sensitivity.py"
+  },
+  "C10": {
+    "state": "completed",
+    "script": "scripts/q2/06_topk_predictive.py",
+    "started": "2026-11-07 19:23:02",
+    "script_sha256": "75f676edd67111cc6de3075d5e056991cd1b40ac14aeff52c28efd6e3dbc5d85",
+    "exit_code": 0,
+    "elapsed_seconds": 4.620846509933472
+  },
+  "C11": {
+    "state": "completed",
+    "script": "scripts/q2/07_method_matrix.py",
+    "started": "2026-11-07 19:09:01",
+    "script_sha256": "feab06eabc16059ebea6410aac7413320609651bfe182654cfc0f27c572320c6",
+    "exit_code": 0,
+    "elapsed_seconds": 25.800742626190186,
+    "executed_path_before_layout_migration": "q2/07_method_matrix.py"
+  },
+  "C13": {
+    "state": "completed",
+    "script": "scripts/q2/10_bootstrap_upgrade.py",
+    "started": "2026-11-07 19:30:44",
+    "script_sha256": "1cd15355da656e8383185ec4795074a99c4b245d173a87c578bc1667b8ee9049",
+    "exit_code": 0,
+    "elapsed_seconds": 6.027466535568237
+  },
+  "C21": {
+    "state": "completed",
+    "script": "scripts/q3/09_latent_sensitivity.py",
+    "started": "2026-11-07 18:59:53",
+    "script_sha256": "f0f02d3251a25cdb580782f165bebec299d0985f6f26eda8e888451944f941e1",
+    "exit_code": 0,
+    "elapsed_seconds": 63.00785803794861,
+    "executed_path_before_layout_migration": "q3/09_latent_sensitivity.py"
+  }
+}
